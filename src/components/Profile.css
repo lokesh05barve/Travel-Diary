@@ -1,0 +1,81 @@
+.profile {
+  min-height: 100dvh;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  padding: clamp(2rem, 10vh, 4rem) 0;
+  color: white;
+}
+
+.profile-container {
+  max-width: min(100%, 1200px);
+  margin: 0 auto;
+  padding: 0 clamp(0.75rem, 4vw, 1.25rem);
+}
+
+.profile-title {
+  text-align: center;
+  font-size: clamp(2rem, 8vw, 3rem);
+  margin-bottom: clamp(1.5rem, 8vh, 3rem);
+  color: #f39c12;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+}
+
+.profile-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: clamp(1.25rem, 6vw, 2rem);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.profile-card.full {
+  grid-column: 1 / -1;
+}
+
+.profile-card h2 {
+  color: #dbb784;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.profile-detail {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.profile-detail strong {
+  color: #f39c12;
+}
+
+.profile-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.9);
+}
+
+@media (max-width: 768px) {
+  .profile-title {
+    font-size: clamp(1.6rem, 6.5vw, 2rem);
+  }
+  
+  .profile-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(0.75rem, 3vw, 1.5rem);
+  }
+  
+  .profile-card {
+    padding: clamp(0.75rem, 4vw, 1.5rem);
+  }
+}
+
